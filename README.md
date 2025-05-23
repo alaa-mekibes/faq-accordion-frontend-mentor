@@ -20,7 +20,7 @@ Users should be able to:
 ### Links
 
 - [Solution on Frontend Mentor](https://your-solution-url.com)
-- [live site URL](https://your-live-site-url.com)
+- [live site URL](https://alaa-mekibes.github.io/faq-accordion-frontend-mentor)
 
 ## My process
 
