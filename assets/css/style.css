@@ -4,6 +4,7 @@
     --Purple-600: hsl(292, 16%, 49%);
     --Purple-950: hsl(292, 42%, 14%);
     --purple-hover: hsl(282, 84%, 55%);
+    --boxShadow: rgba(149, 157, 165, 0.2);
     --fw-400: 400;
     --fw-600: 600;
     --fw-700: 700;
@@ -12,23 +13,23 @@
 @font-face {
     font-family: 'WorkSans';
     font-weight: 400;
-    src: url(../fonts/WorkSans-Regular.ttf) format(truetype);
+    src: url('../fonts/WorkSans-Regular.ttf') format(truetype);
 }
 @font-face {
     font-family: 'WorkSans';
     font-weight: 600;
-    src: url(../fonts/WorkSans-SemiBold.ttf) format(truetype);
+    src: url('../fonts/WorkSans-SemiBold.ttf') format(truetype);
 }
 @font-face {
     font-family: 'WorkSans';
     font-weight: 700;
-    src: url(../fonts/WorkSans-Bold.ttf) format(truetype);
+    src: url('../fonts/WorkSans-Bold.ttf') format(truetype);
 }
 body {
     font-family: 'WorkSans', sans-serif;
     line-height: 1.4;
     background-color: var(--Purple-100);
-    background-image: url("../images/background-pattern-desktop.svg");
+    background-image: url("../images/background-pattern-mobile.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-attachment: fixed;
@@ -39,15 +40,15 @@ body {
     align-items: center;
     min-height: 100vh;
 }
-#main_container .container {
+.main_container .container {
     background-color: var(--White);
     border-radius: 10px;
     padding: 2rem 1.5rem 1rem;
     margin: 1rem;
     max-width: 550px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--boxShadow) 0px 8px 24px;
 }
-#main_container .container h1 {
+.main_container .container h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -61,14 +62,17 @@ body {
         font-size: 2.5rem;
     }
 }
-#main_container .container details {
+.main_container .container details {
     font-size: var(--Font-size);
     width: 100%;
-    &:not(:last-child) {
-        border-bottom: 1px solid var(--Purple-100);
+}
+.main_container .container article {
+    border-bottom: 1px solid var(--Purple-100);
+    &:last-of-type {
+        border-bottom: 1px solid transparent;
     }
 }
-#main_container .container details summary {
+.main_container .container details summary {
     list-style: none;
     cursor: pointer;
     font-weight: var(--fw-600);
@@ -88,7 +92,7 @@ body {
         color: var(--purple-hover)
     }
 }
-#main_container .container article:has(details[open])  {
+.main_container .container article:has(details[open])  {
     .plus-icon {
         display: none;
     }
@@ -96,7 +100,7 @@ body {
         display: block;
     }
 }
-#main_container .container article:has(details:not(details[open])) {
+.main_container .container article:has(details:not(details[open])) {
     .plus-icon {
         display: block;
     }
@@ -104,7 +108,7 @@ body {
         display: none;
     }
 }
-#main_container .container details p {
+.main_container .container details p {
     font-size: 15px;
     color: var(--Purple-600);
     margin-bottom: 15px;
@@ -120,8 +124,14 @@ body {
         margin-top: 0;
     }
 }
-@media (max-width: 48rem) {
+@media (min-width: 48rem) {
     body {
-        background-image: url(../images/background-pattern-mobile.svg);
+        background-image: url(../images/background-pattern-desktop.svg);
     }
+}
+/* Accesibility */ 
+@media (prefers-reduced-motion: reduce) {
+  .main_container .container details summary {
+    transition: none;
+  }
 }
