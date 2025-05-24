@@ -37,6 +37,7 @@ Users should be able to:
 **But what is the goal?** Internationalization: They support languages that are right-to-left (RTL) like Arabic, or vertical writing systems like Japanese. So it's more flexible.
 
 - Using **`prefers-reduced-motion: reduce`** for users who prefered reduced motion. e.g:
+```css
 @media (prefers-reduced-motion: reduce) {
   .ele {
     transition: none;
