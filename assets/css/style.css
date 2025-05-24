@@ -13,17 +13,17 @@
 @font-face {
     font-family: 'WorkSans';
     font-weight: 400;
-    src: url('../fonts/WorkSans-Regular.ttf') format(truetype);
+    src: url('../fonts/WorkSans-Regular.ttf') format("truetype");
 }
 @font-face {
     font-family: 'WorkSans';
     font-weight: 600;
-    src: url('../fonts/WorkSans-SemiBold.ttf') format(truetype);
+    src: url('../fonts/WorkSans-SemiBold.ttf') format("truetype");
 }
 @font-face {
     font-family: 'WorkSans';
     font-weight: 700;
-    src: url('../fonts/WorkSans-Bold.ttf') format(truetype);
+    src: url('../fonts/WorkSans-Bold.ttf') format("truetype");
 }
 body {
     font-family: 'WorkSans', sans-serif;
@@ -43,33 +43,32 @@ body {
 .main_container .container {
     background-color: var(--White);
     border-radius: 10px;
-    padding: 2rem 1.5rem 1rem;
-    margin: 1rem;
-    max-width: 550px;
+    padding: 2rem 2rem 1rem;
+    margin: 1rem auto;
+    max-width: clamp(320px, 90%, 550px);
     box-shadow: var(--boxShadow) 0px 8px 24px;
 }
 .main_container .container h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1.25rem;
+    margin-block-end: 1.25rem;
     img {
-        width: 30px;
+        width: clamp(30px, 5vw, 40px);
     }
     span {
         color: var(--Purple-950);
         font-weight: var(--fw-700);
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 .main_container .container details {
     font-size: var(--Font-size);
-    width: 100%;
 }
 .main_container .container article {
-    border-bottom: 1px solid var(--Purple-100);
+    border-block-end: 1px solid var(--Purple-100);
     &:last-of-type {
-        border-bottom: 1px solid transparent;
+        border-block-end: 1px solid transparent;
     }
 }
 .main_container .container details summary {
@@ -80,13 +79,13 @@ body {
     margin: 1.25rem 0;
     position: relative;
     transition: .2s;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
     img {
         min-width: 30px;
+        user-select: none;
     }
     &:hover {
         color: var(--purple-hover)
@@ -111,17 +110,17 @@ body {
 .main_container .container details p {
     font-size: 15px;
     color: var(--Purple-600);
-    margin-bottom: 15px;
-    width: 100%;
+    margin-block-end: 15px;
+    animation: swap .5s;
 }
 @keyframes swap {
     0% {
         opacity: 0;
-        margin-top: -10px;
+        margin-block-start: -10px;
     }
     100% {
         opacity: 1;
-        margin-top: 0;
+        margin-block-start: 0;
     }
 }
 @media (min-width: 48rem) {
@@ -133,5 +132,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .main_container .container details summary {
     transition: none;
+  }
+  .main_container .container details p {
+    animation: none;
   }
 }
