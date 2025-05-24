@@ -54,7 +54,7 @@ body {
     gap: 1rem;
     margin-block-end: 1.25rem;
     img {
-        width: clamp(30px, 5vw, 40px);
+        width: clamp(1.875rem, 5vw, 2.5rem);
     }
     span {
         color: var(--Purple-950);

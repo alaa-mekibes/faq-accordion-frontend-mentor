@@ -16,7 +16,8 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 p, h1, h2, h3, h4, h5, h6, li, a {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px var(--shadow);
 }
 p {
   text-wrap: pretty;
