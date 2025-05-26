@@ -123,17 +123,16 @@ body {
         margin-block-start: 0;
     }
 }
+
 @media (min-width: 48rem) {
     body {
         background-image: url(../images/background-pattern-desktop.svg);
     }
 }
-/* Accesibility */ 
+
 @media (prefers-reduced-motion: reduce) {
-  .main_container .container details summary {
-    transition: none;
-  }
-  .main_container .container details p {
-    animation: none;
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }

@@ -39,8 +39,9 @@ Users should be able to:
 - Using **`prefers-reduced-motion: reduce`** for users who prefered reduced motion. e.g:
 ```css
 @media (prefers-reduced-motion: reduce) {
-  .ele {
-    transition: none;
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }
 ``` 
